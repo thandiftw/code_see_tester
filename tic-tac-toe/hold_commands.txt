@@ -1,0 +1,44 @@
+or$: " or "
+comment$: "#"
+
+call$: "()"
+get (tub|help|hub)$: "github "
+
+(equivalent|equates)$: " == "
+(title|sentence) string$: "String"
+(left|L) box$: "["
+(our|are|r) box$: "]"
+
+else if: "elif "
+
+<phrase> calls <phrase>:
+    "{phrase}.{phrase_2}"
+
+box$: 
+    insert("[]")
+    key(left)
+insert$: 
+    "insert(\"\")"
+    key(left left)
+    
+
+if$: 
+    "if :"
+    key(left)
+pick$: 
+    "<>"
+    key(left)
+pick <phrase>:
+    insert("<>")
+    key(left)    
+    "{phrase}"
+
+
+if word == "sonover" and form_string:
+    form_string = False
+    new_code += "\""
+    continue
+if word == "string" and not method and not form_string:
+    form_string = True
+    new_code += "\""
+    continue
